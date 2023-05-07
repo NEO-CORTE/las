@@ -7,6 +7,7 @@ class Shape
 {
 public:
 	char znak;
+	string color;
 protected:
 	int height;
 	int width;

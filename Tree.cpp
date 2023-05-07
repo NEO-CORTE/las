@@ -1,8 +1,9 @@
 #include "Tree.h"
-Tree::Tree(int h, char z) {
+Tree::Tree(int h, char z, string col) {
 	height = h;
 	znak = z;
 	width = 2 * h - 1;
+	color = col;
 	tab = new int* [height];
 	for (int j = 0; j < height; j++) {
 		tab[j] = new int[width];

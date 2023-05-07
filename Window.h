@@ -4,7 +4,7 @@ class Window :
     public Rectangle
 {
 public:
-    Window(int w, int h, char z) : Rectangle(w, h, z) {
+    Window(int w, int h, char z, string col) : Rectangle(w, h, z, col) {
         int j;
         for (j = 0; j < height; j++) {
             for (int i = 0; i < width; i++) {

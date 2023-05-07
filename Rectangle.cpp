@@ -1,8 +1,9 @@
 #include "Rectangle.h"
-Rectangle::Rectangle(int w, int h, char z) {
+Rectangle::Rectangle(int w, int h, char z, string col) {
 	width = w;
 	height = h;
 	znak = z;
+	color = col;
 	tab = new int* [height];
 	for (int j = 0; j < height; j++) {
 		tab[j] = new int[width];

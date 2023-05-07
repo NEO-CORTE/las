@@ -14,9 +14,9 @@ public:
 	Forest(int w, int h);
 	~Forest();
 	void printLas();
-	void AddTree(int h, char z, int y, int x);
-	void AddRect(int w, int h, char z, int y, int x);
-	void AddWindow(int w, int h, char z, int y, int x);
-	void AddTriangle(int h, char z, int y, int x, int rot_op = 1);
+	void AddTree(int h, char z, string col,int y, int x);
+	void AddRect(int w, int h, char z, string col, int y, int x);
+	void AddWindow(int w, int h, char z, string col, int y, int x);
+	void AddTriangle(int h, char z, string col, int y, int x, int rot_op = 1);
 };
 

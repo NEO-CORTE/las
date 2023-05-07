@@ -1,7 +1,8 @@
 #include "Triangle.h"
-Triangle::Triangle(int h, char z, int rot_op) {
+Triangle::Triangle(int h, char z, string col, int rot_op) {
 	height = h;
 	znak = z;
+	color = col;
 	tab = new int* [height];
 	for (int j = 0; j < height; j++) {
 		tab[j] = new int[height];

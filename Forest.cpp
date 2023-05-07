@@ -23,13 +23,23 @@ Forest::~Forest() {
 }
 void Forest::printLas() {
 	int i, j;
-	/*cout << H << W;*/
 	for (j = 0; j < H; j++) {
 		for (i = 0; i < W; i++) {
 			int k = tab[j][i];
-			//cout << "A: " << j << " B: " << i << endl;
 			if (k) {
-				cout << wektor[k - 1]->znak;
+				if (wektor[k - 1]->color == "red") {
+					cout << "\033[;31m";
+				}
+				if (wektor[k - 1]->color == "blue") {
+					cout << "\033[;34m";
+				}
+				if (wektor[k - 1]->color == "gray") {
+					cout << "\033[;90m";
+				}
+				if (wektor[k - 1]->color == "green") {
+					cout << "\033[;32m";
+				}
+				cout << wektor[k - 1]->znak << "\033[0m";
 			}
 			else {
 				cout << " ";
@@ -40,9 +50,9 @@ void Forest::printLas() {
 }
 
 
-void Forest::AddTree(int h, char z, int y, int x) {
+void Forest::AddTree(int h, char z, string col, int y, int x) {
 	int i, j;
-	Tree* drzewo1 = new Tree(h, z);
+	Tree* drzewo1 = new Tree(h, z, col);
 	drzewo1->x = x;
 	drzewo1->y = y;
 	wektor.push_back(drzewo1);
@@ -54,9 +64,9 @@ void Forest::AddTree(int h, char z, int y, int x) {
 		}
 	}
 }
-void Forest::AddRect(int w, int h, char z, int y, int x) {
+void Forest::AddRect(int w, int h, char z, string col, int y, int x) {
 	int i, j;
-	Rectangle* prosto1 = new Rectangle(w, h, z);
+	Rectangle* prosto1 = new Rectangle(w, h, z, col);
 	prosto1->x = x;
 	prosto1->y = y;
 	wektor.push_back(prosto1);
@@ -68,9 +78,9 @@ void Forest::AddRect(int w, int h, char z, int y, int x) {
 		}
 	}
 }
-void Forest::AddWindow(int w, int h, char z, int y, int x) {
+void Forest::AddWindow(int w, int h, char z, string col, int y, int x) {
 	int i, j;
-	Window* prosto1 = new Window(w, h, z);
+	Window* prosto1 = new Window(w, h, z, col);
 	prosto1->x = x;
 	prosto1->y = y;
 	wektor.push_back(prosto1);
@@ -85,9 +95,9 @@ void Forest::AddWindow(int w, int h, char z, int y, int x) {
 		}
 	}
 }
-void Forest::AddTriangle(int h, char z, int y, int x, int rot_op) {
+void Forest::AddTriangle(int h, char z, string col, int y, int x, int rot_op) {
 	int i, j;
-	Triangle* troj1 = new Triangle(h, z, rot_op);
+	Triangle* troj1 = new Triangle(h, z, col, rot_op);
 	troj1->x = x;
 	troj1->y = y;
 	wektor.push_back(troj1);
