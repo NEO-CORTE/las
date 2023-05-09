@@ -18,7 +18,9 @@ Forest::~Forest() {
 		delete tab[j];
 	delete tab;
 	for (auto t : wektor) {
-		delete t;
+		if (!wasCopied) {
+			delete t;
+		}
 	}
 }
 void Forest::printLas() {
@@ -48,7 +50,6 @@ void Forest::printLas() {
 		cout << endl;
 	}
 }
-
 
 void Forest::AddTree(int h, char z, string col, int y, int x) {
 	int i, j;

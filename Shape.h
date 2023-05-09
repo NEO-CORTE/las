@@ -12,12 +12,13 @@ protected:
 	int height;
 	int width;
 	int** tab;
-	int x;
-	int y;
+
 	virtual void draw() {
 		cout << "Why am i displayed";
 	}
 public:
+	int x;
+	int y;
 	~Shape() {
 		int j;
 		for (j = 0; j < height; j++)

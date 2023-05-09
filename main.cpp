@@ -5,6 +5,15 @@ using namespace std;
 int main()
 {
 	Forest mainForest(60, 40);
+	Forest bckup(60, 40);
+	bckup.AddRect(20, 5, '*', "red", 10, 10);
+	Rectangle* kwadrat = new Rectangle(20, 3, 'Q', "red");
+	kwadrat->x = 10;
+	kwadrat->y = 7;
+	//bckup.AddRect(20, 3, 'Q', "red", 7, 10);
+
+	mainForest += bckup;
+
 	mainForest.AddRect(20, 5, '*',"red", 10, 10);
 	mainForest.AddRect(20, 3, 'Q',"red", 7, 10);
 	mainForest.AddWindow(4, 3, 'Q',"blue", 12, 18);
