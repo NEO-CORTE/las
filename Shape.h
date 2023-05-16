@@ -6,7 +6,7 @@ using namespace std;
 class Shape
 {
 public:
-	char znak;
+	char znak = '*';
 	string color;
 protected:
 	int height;
